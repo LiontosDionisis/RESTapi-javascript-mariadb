@@ -6,9 +6,12 @@ const userRoute = require("./routes/user.route");
 const productRoute = require("./routes/product.route");
 
 app.use(express.json());
+// app.use(app.router);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 
 app.listen(port, () => {
     console.log("Server running on port: ", port);
 })
+
+module.exports = app;

@@ -13,7 +13,7 @@ const userEntity = new EntitySchema({
         email: {type: "varchar"}
     },
     relations: {
-        categories: {
+        products: {
             target: "product",
             type: "many-to-many",
             joinTable: true,

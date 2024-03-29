@@ -5,8 +5,7 @@ async function findAll() {
     const result = await dataSource
         .getRepository(userEntity)
         .createQueryBuilder()
-        .select("user")
-        .from(userEntity, "user")
+        .leftJoinAndSelect("user.products", "product")
         .getMany()
     return result
 }

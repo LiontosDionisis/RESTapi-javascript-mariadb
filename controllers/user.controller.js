@@ -12,3 +12,17 @@ exports.findAll = async(req, res) => {
         console.log("Error in finding users")
     }
 }
+
+exports.findOne = async(req, res) => {
+    console.log("Find one user");
+    let id = req.params.id; 
+    try {
+        const result = await userService.findOne(id);
+        res.status(200).json({data: result});
+        console.log("Found one user");
+    } catch (err) {
+        res.status(400).json({data: err});
+        console.log("Error in finding user");
+    }
+    
+}
